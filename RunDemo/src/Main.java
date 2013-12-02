@@ -10,7 +10,7 @@ public class Main {
 		// "D:\\Program Files\\Microsoft Office\\OFFICE11\\WINWORD.EXE F:\\test.doc";
 		// String cmd = "cmd.exe /c start F:\\test.doc";
 //		String cmd = "ping www.baidu.com";
-		String cmd="";
+		String cmd="test";
 
 		// linux
 		// String cmd = "./fork_wait";
