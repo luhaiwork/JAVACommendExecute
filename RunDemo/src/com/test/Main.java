@@ -9,26 +9,18 @@ import com.test.tools.FileTools;
 
 public class Main {
 	public static void main(String[] args) {
-		// windows
-		// String cmd = "F:\\apache-tomcat-6.0.20.exe";
-		// String cmd =
-		// "D:\\Program Files\\Microsoft Office\\OFFICE11\\WINWORD.EXE F:\\test.doc";
-		// String cmd = "cmd.exe /c start F:\\test.doc";
 		// String cmd = "ping www.baidu.com";
-		String cmd = "ping www.baidu.com";
-
-		// linux
-		// String cmd = "./fork_wait";
-		// String cmd = "ls -l";
-		// String[] cmd=new String[3];
-		// cmd[0]="/bin/sh";
-		// cmd[1]="-c";
-		// cmd[2]="ls -l ./";
+		String databaseName="databaseName";
+		String toChangUserName="toChangUserName";
+		String toChangUserPass="toChangUserPass";
+		String path = "D:/tmp/sss/aa.bat";
+		String cmd = "sqlplus  sys/sys@"+databaseName+" as sysdba @"+path;
 		StringBuilder sb = new StringBuilder();
-		sb.append("test");
-		// String path =
+		sb.append("alter user "+toChangUserName+" identified by "+toChangUserPass+";");
+		sb.append("\n");
+		sb.append("exit;");
 		try {
-			FileTools.createFile("D:/tmp/sss/aa.bat", sb.toString());
+			FileTools.createFile(path, sb.toString());
 		} catch (IOException e1) {
 			e1.printStackTrace();
 			return;
@@ -52,5 +44,7 @@ public class Main {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		//执行完成后删除生成的文件
+		FileTools.deleteFile(path);
 	}
 }

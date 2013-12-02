@@ -14,6 +14,16 @@ public class FileTools {
 		fw.flush();
 		fw.close();
 	}
+	/**
+	 * delete file 
+	 * @param path file path
+	 * @return
+	 */
+	public static boolean deleteFile(String path){
+		File file = new File(path);
+		boolean delete = file.delete();
+		return delete;
+	}
 
 //	public static void main(String[] args) {
 //		// System.out.println("test1");
