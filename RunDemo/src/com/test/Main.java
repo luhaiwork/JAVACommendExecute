@@ -1,4 +1,5 @@
 package com.test;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,14 +8,14 @@ import java.io.InputStreamReader;
 import com.test.tools.FileTools;
 
 public class Main {
-	public static void main(String[] args)  {
+	public static void main(String[] args) {
 		// windows
 		// String cmd = "F:\\apache-tomcat-6.0.20.exe";
 		// String cmd =
 		// "D:\\Program Files\\Microsoft Office\\OFFICE11\\WINWORD.EXE F:\\test.doc";
 		// String cmd = "cmd.exe /c start F:\\test.doc";
-//		String cmd = "ping www.baidu.com";
-		String cmd="ping www.baidu.com";
+		// String cmd = "ping www.baidu.com";
+		String cmd = "ping www.baidu.com";
 
 		// linux
 		// String cmd = "./fork_wait";
@@ -25,12 +26,12 @@ public class Main {
 		// cmd[2]="ls -l ./";
 		StringBuilder sb = new StringBuilder();
 		sb.append("test");
-//		String path =
+		// String path =
 		try {
 			FileTools.createFile("D:/tmp/sss/aa.bat", sb.toString());
 		} catch (IOException e1) {
 			e1.printStackTrace();
-			return ;
+			return;
 		}
 		Runtime run = Runtime.getRuntime();// 返回与当前 Java 应用程序相关的运行时对象
 		try {
