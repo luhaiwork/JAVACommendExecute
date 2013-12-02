@@ -1,10 +1,13 @@
 package com.test;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
+import com.test.tools.FileTools;
+
 public class Main {
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
 		// windows
 		// String cmd = "F:\\apache-tomcat-6.0.20.exe";
 		// String cmd =
@@ -20,6 +23,14 @@ public class Main {
 		// cmd[0]="/bin/sh";
 		// cmd[1]="-c";
 		// cmd[2]="ls -l ./";
+		StringBuilder sb = new StringBuilder();
+		sb.append("test");
+		try {
+			FileTools.createFile("D:/tmp/sss/aa.bat", sb.toString());
+		} catch (IOException e1) {
+			e1.printStackTrace();
+			return ;
+		}
 		Runtime run = Runtime.getRuntime();// 返回与当前 Java 应用程序相关的运行时对象
 		try {
 			Process p = run.exec(cmd);// 启动另一个进程来执行命令
