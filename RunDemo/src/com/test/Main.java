@@ -3,6 +3,7 @@ import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.ObjectInputStream.GetField;
 
 import com.test.tools.FileTools;
 
@@ -14,7 +15,7 @@ public class Main {
 		// "D:\\Program Files\\Microsoft Office\\OFFICE11\\WINWORD.EXE F:\\test.doc";
 		// String cmd = "cmd.exe /c start F:\\test.doc";
 //		String cmd = "ping www.baidu.com";
-		String cmd="test1";
+		String cmd="ping www.baidu.com";
 
 		// linux
 		// String cmd = "./fork_wait";
@@ -25,6 +26,7 @@ public class Main {
 		// cmd[2]="ls -l ./";
 		StringBuilder sb = new StringBuilder();
 		sb.append("test");
+//		String path =
 		try {
 			FileTools.createFile("D:/tmp/sss/aa.bat", sb.toString());
 		} catch (IOException e1) {
